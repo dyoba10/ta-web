@@ -28,16 +28,19 @@
       <!-- DataTables -->
       <div class="card mb-3">
         <div class="card-header">
-        <a href="<?php echo site_url('admin/wisata/') ?>"><i class="fas fa-plus"></i> Back</a>
+        <a href="<?php echo site_url('admin/toko/') ?>"><i class="fas fa-arrow-left"></i></a>
         </div>
         <div class="card-body">
-            <form action="<?php base_url('admin/wisata/add') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php base_url('admin/toko/edit') ?>" method="post" enctype="multipart/form-data">
+                
+            <input type="hidden" name="id" value="<?php echo $toko->id_toko?>" />
+
                 <div class="form-group">
-                    <label for="nama_wisata">Nama Wisata</label>
-                    <input class="form-control <?php echo form_error('nama_wisata') ? 'is-invalid':'' ?>"
-					    type="text" name="nama_wisata" placeholder="Nama Wisata" />
+                    <label for="nama_toko">Nama Toko</label>
+                    <input class="form-control <?php echo form_error('nama_toko') ? 'is-invalid':'' ?>"
+					    type="text" name="nama_toko" placeholder="Nama Toko" value="<?php echo $toko->nama_toko ?>" />
                     <div class="invalid-feedback">
-                        <?php echo form_error('nama_wisata') ?>
+                        <?php echo form_error('nama_toko') ?>
                     </div>    
                 </div>
 
@@ -45,6 +48,7 @@
 					<label for="name">Gambar</label>
 					<input class="form-control-file <?php echo form_error('gambar') ? 'is-invalid':'' ?>"
 					    type="file" name="gambar" />
+                    <input type="hidden" name="old_image" value="<?php echo $toko->gambar ?>" />    
 					<div class="invalid-feedback">
 						<?php echo form_error('gambar') ?>
 				    </div>
@@ -53,7 +57,7 @@
                 <div class="form-group">
 					<label for="name">Alamat*</label>
 						<textarea class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
-								 name="alamat" placeholder="Alamat"></textarea>
+								 name="alamat" placeholder="Alamat"><?php echo $toko->alamat ?></textarea>
 					<div class="invalid-feedback">
 						<?php echo form_error('alamat') ?>
 					</div>
@@ -62,31 +66,31 @@
         <div class="form-group">
 					<label for="name">Deskripsi*</label>
 						<textarea class="form-control <?php echo form_error('deskripsi') ? 'is-invalid':'' ?>"
-								 name="deskripsi" placeholder="Deskripsi"></textarea>
+								 name="deskripsi" placeholder="Deskripsi"><?php echo $toko->deskripsi ?></textarea>
 					<div class="invalid-feedback">
 						<?php echo form_error('deskripsi') ?>
 					</div>
 				</div>
 
-                <div class="form-group">
+          <div class="form-group">
 					<label for="price">Latitude</label>
 					<input class="form-control <?php echo form_error('latitude') ? 'is-invalid':'' ?>"
-						type="text" name="latitude" placeholder="Latitude" />
-					 <div class="invalid-feedback">
+						type="text" name="latitude" min="0" placeholder="Latitude" value="<?php echo $toko->latitude ?>" />
+					<div class="invalid-feedback">
 						<?php echo form_error('latitude') ?>
-				    </div> 
-				</div>
+				    </div>
+				  </div>
 
-                 <div class="form-group">
+          <div class="form-group">
 					<label for="longitude">Longitude</label>
 					<input class="form-control <?php echo form_error('longitude') ? 'is-invalid':'' ?>"
-						type="text" name="longitude" placeholder="Longitude" />
+						type="text" name="longitude" min="0" placeholder="Longitude" value="<?php echo $toko->longitude ?>" />
 					<div class="invalid-feedback">
 						<?php echo form_error('longitude') ?>
 				    </div>
-				</div>
+				  </div>
 
-                <input class="btn btn-success" type="submit" name="btn" value="Save" />    
+          <input class="btn btn-success" type="submit" name="btn" value="Save" />    
             </form>
         </div>
       </div>  

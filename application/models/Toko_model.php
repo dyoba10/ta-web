@@ -8,6 +8,7 @@ class Toko_model extends CI_Model
     public $nama_toko;
     public $gambar = "default.jpg";
     public $alamat;
+    public $deskripsi;
     public $latitude;
     public $longitude;
 
@@ -53,6 +54,7 @@ class Toko_model extends CI_Model
         $this->nama_toko = $post["nama_toko"];
         $this->gambar = $this->_uploadImage();
         $this->alamat = $post["alamat"];
+        $this->deskripsi = $post["deskripsi"];
         $this->latitude = $post["latitude"];
         $this->longitude = $post["longitude"];
         $this->db->insert($this->_table, $this);
@@ -71,6 +73,7 @@ class Toko_model extends CI_Model
         }
 
         $this->alamat = $post["alamat"];
+        $this->deskripsi = $post["deskripsi"];
         $this->latitude = $post["latitude"];
         $this->longitude = $post["longitude"];
         $this->db->update($this->_table, $this, array('id_toko' => $post['id']));        

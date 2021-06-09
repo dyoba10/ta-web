@@ -28,16 +28,16 @@
       <!-- DataTables -->
       <div class="card mb-3">
         <div class="card-header">
-        <a href="<?php echo site_url('admin/wisata/') ?>"><i class="fas fa-plus"></i> Back</a>
+        <a href="<?php echo site_url('admin/fasilitas/') ?>"><i class="fas fa-plus"></i> Back</a>
         </div>
         <div class="card-body">
-            <form action="<?php base_url('admin/wisata/add') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php base_url('admin/fasilitas/add') ?>" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="nama_wisata">Nama Wisata</label>
-                    <input class="form-control <?php echo form_error('nama_wisata') ? 'is-invalid':'' ?>"
-					    type="text" name="nama_wisata" placeholder="Nama Wisata" />
+                    <label for="nama_fasilitas">Nama Fasilitas</label>
+                    <input class="form-control <?php echo form_error('nama_fasilitas') ? 'is-invalid':'' ?>"
+					    type="text" name="nama_fasilitas" placeholder="Nama fasilitas" />
                     <div class="invalid-feedback">
-                        <?php echo form_error('nama_wisata') ?>
+                        <?php echo form_error('nama_fasilitas') ?>
                     </div>    
                 </div>
 

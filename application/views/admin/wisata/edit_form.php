@@ -63,6 +63,15 @@
 					</div>
 				</div>
 
+        <div class="form-group">
+					<label for="name">Deskripsi*</label>
+						<textarea class="form-control <?php echo form_error('deskripsi') ? 'is-invalid':'' ?>"
+								 name="deskripsi" placeholder="Deskripsi"><?php echo $wisata->deskripsi ?></textarea>
+					<div class="invalid-feedback">
+						<?php echo form_error('deskripsi') ?>
+					</div>
+				</div>
+
           <div class="form-group">
 					<label for="price">Latitude</label>
 					<input class="form-control <?php echo form_error('latitude') ? 'is-invalid':'' ?>"

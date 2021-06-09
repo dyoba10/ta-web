@@ -45,7 +45,13 @@
             <a class="nav-link js-scroll-trigger" href="#maps">Peta</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#daftar">Daftar Lokasi</a>
+            <a class="nav-link js-scroll-trigger" href="#daftar">Wisata</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#daftar-toko">Toko</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#daftar-fasilitas">Fasilitas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Kontak</a>
@@ -78,7 +84,7 @@
         <div class="col-lg-8 text-center">
         <h2 class="text-white mt-0">SIG</h2>
           <hr class="divider light my-4">
-          <p class="text-white-50 mb-4">Sistem Informasi Geografis untuk mempermudah mencari informasi letak secara visual di Provinsi Lampung.</p>
+          <p class="text-white-50 mb-4">Sistem Informasi Geografis untuk mempermudah mencari informasi letak secara visual di Bandar Lampung.</p>
           <a class="btn btn-light btn-xl js-scroll-trigger" href="#maps">Get Started!</a>
         </div>
       </div>
@@ -91,23 +97,24 @@
    <section class="page-section" id="maps">
     <div class="container">
      <div class="row justify-content-center">
-     <div class="col-lg-8 text-center">
-      <h2 class="text-center mt-0">Peta lokasi Bandar lampung</h2>
-      <hr class="divider my-4">
-     </div> 
-        <?php echo $map['html']; ?>
-        <p>*Marker pada maps adalah titik lokasi di daerah ProvinsiLampung, Marker berwarna biru adalah titik lokasi pengguna</p>
-        <button onclick="get_location()" class="btn btn-xl btn-info">Lokasi anda</button>
+        <div class="col-lg-8 text-center">
+          <h2 class="text-center mt-0">Peta lokasi Bandar lampung</h2>
+          <hr class="divider my-4">
+        </div> 
+      <?php echo $map['html']; ?>
+      <p>*Marker pada maps adalah titik lokasi di daerah ProvinsiLampung, Marker berwarna biru adalah titik lokasi pengguna</p>
+      <br>
+      <button onclick="get_location()" class="btn btn-xl btn-info">Lokasi anda</button>
      </div>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
+  <!-- Daftar Lokasi Wisata -->
   <section class="page-section" id="daftar">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
-        <h2 class="text-center mt-0">Daftar Lokasi didaerah Bandar Lampung</h2>
+        <h2 class="text-center mt-0">Daftar Lokasi Wisata di daerah Bandar Lampung</h2>
         <hr class="divider my-4">
         <div class="table-responsive">
           <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -116,8 +123,8 @@
                   <th>Nama Wisata</th>
                   <th>Gambar</th>
                   <th>Alamat</th>
-                  <!-- <th>Deskripsi</th>
-                  <th>Website</th>
+                  <th>Deskripsi</th>
+                  <!--<th>Website</th>
                   <th>Kontak</th> -->
                   <th>Aksi</th>
                 </tr>
@@ -134,14 +141,16 @@
                         <td>
                             <?php echo $wisata->alamat ?>
                         </td>
-                        
+                        <td>
+                            <?php echo $wisata->deskripsi ?>
+                        </td>
                         <td><a 
                               href="javascript:;"
                               data-id="<?php echo $wisata->id_wisata ?>"
                               data-nama_wisata="<?php echo $wisata->nama_wisata ?>"
                               data-imgsource="<?php echo base_url('upload/wisata/'.$wisata->gambar) ?>"
                               data-alamat="<?php echo $wisata->alamat ?>"
-                              
+                              data-deskripsi="<?php echo $wisata->deskripsi ?>"
                               data-toggle="modal" data-target="#edit-data">
                             <button  data-toggle="modal" data-target="#tampil-data" class="btn btn-info">Tampil</button>
                             <a/>
@@ -154,7 +163,120 @@
         </div>
       </div>
     </div>
-  </section>     
+  </section>
+
+  <!-- Daftar Lokasi Toko -->
+  <section class="page-section" id="daftar-toko">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+        <h2 class="text-center mt-0">Daftar Lokasi Toko di daerah Bandar Lampung</h2>
+        <hr class="divider my-4">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                  <th>Nama Toko</th>
+                  <th>Gambar</th>
+                  <th>Alamat</th>
+                  <th>Deskripsi</th>
+                  <!--<th>Website</th>
+                  <th>Kontak</th> -->
+                  <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($toko as $toko): ?>
+                    <tr>
+                        <td width="150">
+                            <?php echo $toko->nama_toko ?>
+                        </td>
+                        <td>
+                            <img id="imgsource" src="<?php echo base_url('upload/toko/'.$toko->gambar) ?>" width="64">
+                        </td>
+                        <td>
+                            <?php echo $toko->alamat ?>
+                        </td>
+                        <td>
+                            <?php echo $toko->deskripsi ?>
+                        </td>
+                        <td><a 
+                              href="javascript:;"
+                              data-id="<?php echo $toko->id_toko ?>"
+                              data-nama_toko="<?php echo $toko->nama_toko ?>"
+                              data-imgsource="<?php echo base_url('upload/toko/'.$toko->gambar) ?>"
+                              data-alamat="<?php echo $toko->alamat ?>"
+                              data-deskripsi="<?php echo $toko->deskripsi ?>"
+                              data-toggle="modal" data-target="#edit-data-toko">
+                            <button  data-toggle="modal" data-target="#tampil-data" class="btn btn-info">Tampil</button>
+                            <a/>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Daftar Lokasi Fasilitas -->
+  <section class="page-section" id="daftar-fasilitas">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+        <h2 class="text-center mt-0">Daftar Lokasi Fasilitas di daerah Bandar Lampung</h2>
+        <hr class="divider my-4">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                  <th>Nama Fasilitas</th>
+                  <th>Gambar</th>
+                  <th>Alamat</th>
+                  <th>Deskripsi</th>
+                  <!--<th>Website</th>
+                  <th>Kontak</th> -->
+                  <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($fasilitas as $fasilitas): ?>
+                    <tr>
+                        <td width="150">
+                            <?php echo $fasilitas->nama_fasilitas ?>
+                        </td>
+                        <td>
+                            <img id="imgsource" src="<?php echo base_url('upload/fasilitas/'.$fasilitas->gambar) ?>" width="64">
+                        </td>
+                        <td>
+                            <?php echo $fasilitas->alamat ?>
+                        </td>
+                        <td>
+                            <?php echo $fasilitas->deskripsi ?>
+                        </td>
+                        <td><a 
+                              href="javascript:;"
+                              data-id="<?php echo $fasilitas->id_fasilitas ?>"
+                              data-nama_fasilitas="<?php echo $fasilitas->nama_fasilitas ?>"
+                              data-imgsource="<?php echo base_url('upload/fasilitas/'.$fasilitas->gambar) ?>"
+                              data-alamat="<?php echo $fasilitas->alamat ?>"
+                              data-deskripsi="<?php echo $fasilitas->deskripsi ?>"
+                              data-toggle="modal" data-target="#edit-data-fasilitas">
+                            <button  data-toggle="modal" data-target="#tampil-data" class="btn btn-info">Tampil</button>
+                            <a/>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Call to Action Section -->
   <!-- <section class="page-section bg-dark text-white">
     <div class="container text-center">
@@ -164,7 +286,7 @@
   </section> -->
 
   <!-- Contact Section -->
-  <section class="page-section" id="contact">
+  <section class="page-section bg-dark text-white" id="contact">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
@@ -188,7 +310,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-light py-5">
+  <footer class="bg-dark text-white py-5">
     <div class="container">
       <div class="small text-center text-muted">Copyright &copy; 2021 - SIG - Dyoba</div>
     </div>

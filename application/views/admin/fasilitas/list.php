@@ -22,14 +22,14 @@
       <!-- DataTables -->
       <div class="card mb-3">
         <div class="card-header">
-        <a href="<?php echo site_url('admin/wisata/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+        <a href="<?php echo site_url('admin/fasilitas/add') ?>"><i class="fas fa-plus"></i> Add New</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                        <th>Nama Wisata</th>
+                        <th>Nama Fasilitas</th>
                         <th>Gambar</th>
                         <th>Alamat</th>
                         <th>Deskripsi</th>
@@ -39,30 +39,30 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <?php foreach ($wisata as $wisata): ?>
+                    <?php foreach ($fasilitas as $fasilitas): ?>
                     <tr>
                         <td width="150">
-                            <?php echo $wisata->nama_wisata ?>
+                            <?php echo $fasilitas->nama_fasilitas ?>
                         </td>
                         <td>
-                        <img id="imgsource" src="<?php echo base_url('upload/wisata/'.$wisata->gambar) ?>" width="64">
+                        <img id="imgsource" src="<?php echo base_url('upload/fasilitas/'.$fasilitas->gambar) ?>" width="64">
                         </td>
                         <td>
-                            <?php echo $wisata->alamat ?>
+                            <?php echo $fasilitas->alamat ?>
                         </td>
                         <td>
-                            <?php echo $wisata->deskripsi ?>
+                            <?php echo $fasilitas->deskripsi ?>
                         </td>
                         <td>
-                            <?php echo $wisata->latitude ?>
+                            <?php echo $fasilitas->latitude ?>
                         </td>
                         <td>
-                            <?php echo $wisata->longitude ?>
+                            <?php echo $fasilitas->longitude ?>
                         </td>
                         <td width="250">
-						    <a href="<?php echo site_url('admin/wisata/edit/'.$wisata->id_wisata) ?>"
+						    <a href="<?php echo site_url('admin/fasilitas/edit/'.$fasilitas->id_fasilitas) ?>"
 								 class="btn btn-small"><i class="fas fa-edit"></i>Edit</a>
-						    <a onclick="deleteConfirm('<?php echo site_url('admin/wisata/delete/'.$wisata->id_wisata) ?>')"
+						    <a onclick="deleteConfirm('<?php echo site_url('admin/fasilitas/delete/'.$fasilitas->id_fasilitas) ?>')"
 							    href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 						</td>
                     </tr>

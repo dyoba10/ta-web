@@ -8,6 +8,7 @@ class Fasilitas_model extends CI_Model
     public $nama_fasilitas;
     public $gambar = "default.jpg";
     public $alamat;
+    public $deskripsi;
     public $latitude;
     public $longitude;
 
@@ -49,6 +50,7 @@ class Fasilitas_model extends CI_Model
         $this->nama_fasilitas = $post["nama_fasilitas"];
         $this->gambar = $this->_uploadImage();
         $this->alamat = $post["alamat"];
+        $this->deskripsi = $post["deskripsi"];
         $this->latitude = $post["latitude"];
         $this->longitude = $post["longitude"];
         $this->db->insert($this->_table, $this);
@@ -67,6 +69,7 @@ class Fasilitas_model extends CI_Model
         }
 
         $this->alamat = $post["alamat"];
+        $this->deskripsi = $post["deskripsi"];
         $this->latitude = $post["latitude"];
         $this->longitude = $post["longitude"];
         $this->db->update($this->_table, $this, array('id_fasilitas' => $post['id']));        
