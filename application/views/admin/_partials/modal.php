@@ -59,7 +59,7 @@
                 <div class="form-group">
 	                  <label class="col-lg-2 col-sm-2 control-label">Gambar</label>
 	                    <div class="col-lg-10">
-                        <img id="imgpreview" src="" style="width: 400px; height: 264px;">
+                        <img id="imgpreview" class="img-fluid" src="" style="width: 400px; height: 264px;">
 	                    </div>
 	              </div>
 
@@ -122,7 +122,7 @@
                 <div class="form-group">
 	                  <label class="col-lg-2 col-sm-2 control-label">Gambar</label>
 	                    <div class="col-lg-10">
-                        <img id="imgpreview" src="" style="width: 400px; height: 264px;">
+                        <img id="imgpreview" class="img-fluid" src="" style="width: 400px; height: 264px;">
 	                    </div>
 	              </div>
 
@@ -185,7 +185,7 @@
                 <div class="form-group">
 	                  <label class="col-lg-2 col-sm-2 control-label">Gambar</label>
 	                    <div class="col-lg-10">
-                        <img id="imgpreview" src="" style="width: 400px; height: 264px;">
+                        <img id="imgpreview" class="img-fluid" src="" style="width: 400px; height: 264px;">
 	                    </div>
 	              </div>
 
