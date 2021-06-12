@@ -103,8 +103,9 @@
         </div> 
       <?php echo $map['html']; ?>
       <p>*Marker pada maps adalah titik lokasi di daerah ProvinsiLampung, Marker berwarna biru adalah titik lokasi pengguna</p>
-      <br>
-      <button onclick="get_location()" class="btn btn-xl btn-info">Lokasi anda</button>
+     </div>
+     <div class="row justify-content-center">
+     <button onclick="get_location()" class="btn btn-xl btn-info">Lokasi anda</button>
      </div>
     </div>
   </section>
@@ -173,7 +174,7 @@
         <h2 class="text-center mt-0">Daftar Lokasi Toko di daerah Bandar Lampung</h2>
         <hr class="divider my-4">
         <div class="table-responsive">
-          <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <table class="table table-hover table-bordered" id="dataTable1" width="100%" cellspacing="0">
             <thead>
                 <tr>
                   <th>Nama Toko</th>
@@ -229,7 +230,7 @@
         <h2 class="text-center mt-0">Daftar Lokasi Fasilitas di daerah Bandar Lampung</h2>
         <hr class="divider my-4">
         <div class="table-responsive">
-          <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <table class="table table-hover table-bordered" id="dataTable2" width="100%" cellspacing="0">
             <thead>
                 <tr>
                   <th>Nama Fasilitas</th>
@@ -394,7 +395,16 @@ function show_error(error){
   <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
   <script src="<?php echo base_url('assets/datatables/jquery.dataTables.js')?>"></script>
   <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.js')?>"></script>
-
+  <script>
+    $(document).ready(function() {
+        $('#dataTable1').DataTable({
+            responsive: true
+        });
+        $('#dataTable2').DataTable({
+            responsive: true
+        });
+    });
+</script>
 </body>
 
 </html>
