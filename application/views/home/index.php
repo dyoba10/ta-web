@@ -103,7 +103,9 @@
         </div> 
       <?php echo $map['html']; ?>
       <p>*Marker pada maps adalah titik lokasi di daerah ProvinsiLampung, Marker berwarna biru adalah titik lokasi pengguna</p>
-     </div>
+      <div id="direction_canvas"></div>
+    </div>
+
      <div class="row justify-content-center">
      <button onclick="get_location()" class="btn btn-xl btn-info">Lokasi anda</button>
      </div>
@@ -329,6 +331,34 @@ function get_location() {
         // no native support; maybe try Gears?
     }
 }
+
+function direction() {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  directionsDisplay.setMap(map);
+
+  marker.addListener('click', function() {
+            directionsService.route({
+                // origin: document.getElementById('start').value,
+                origin: myLatlng,
+
+                // destination: marker.getPosition(),
+                destination: {
+                    lat: latit,
+                    lng: longit
+                },
+                travelMode: 'DRIVING'
+            }, function(response, status) {
+                if (status === 'OK') {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
+
+        });
+}
+
 
 function register_coords(position) {
     var latitude = position.coords.latitude;

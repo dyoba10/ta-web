@@ -15,15 +15,21 @@ class Home extends CI_Controller {
     public function index() 
     {
         
+        $coords = $this->Map_model->get_coordinates();
+        $coords1 = $this->Map_model->get_coordinates_toko();
+        $coords2 = $this->Map_model->get_coordinates_fasilitas();
+
         $config['center'] = 'auto';//Coordinate tengah peta
         $config['zoom'] = '12';
         $config['sensor'] = TRUE;
         $config['https'] = TRUE;
-        $this->googlemaps->initialize($config);
+        //$config['directions'] = TRUE;
+        //$config['directionsStart'] = 'auto';
+        //$config['directionsEnd'] = $coords;
         
-        $coords = $this->Map_model->get_coordinates();
-        $coords1 = $this->Map_model->get_coordinates_toko();
-        $coords2 = $this->Map_model->get_coordinates_fasilitas();
+        
+
+        $this->googlemaps->initialize($config);
 
         foreach ($coords as $coordinate) {
             // $url = prep_url($coordinate->website);

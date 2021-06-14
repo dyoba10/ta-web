@@ -117,10 +117,10 @@ class Googlemaps {
 	var $rectangles					= array();					// An array used by the library to store the rectangles as they are produced
 	var $overlays					= array();					// An array used by the library to store the overlays as they are produced
 	
-	var $directions					= FALSE;					// Whether or not the map will be used to show directions
-	var $directionsStart			= "";						// The starting location (lat/long co-ordinate or address) of the directions. Set to 'auto' to default it to the users location
+	var $directions					= TRUE;					// Whether or not the map will be used to show directions
+	var $directionsStart			= "auto";						// The starting location (lat/long co-ordinate or address) of the directions. Set to 'auto' to default it to the users location
 	var $directionsEnd				= "";						// The destination point (lat/long co-ordinate or address) of the directions. Set to 'auto' to default it to the users location
-	var $directionsDivID			= "";						// An element's ID on the page where textual directions will be output to. Leave blank if not required
+	var $directionsDivID			= "direction_canvas";						// An element's ID on the page where textual directions will be output to. Leave blank if not required
 	var $directionsMode				= "DRIVING"; 				// DRIVING, WALKING or BICYCLING (US Only) - The vehicle/mode of transport to show directions for
 	var $directionsAvoidTolls		= FALSE;					// Whether or not directions should avoid tolls
 	var $directionsAvoidHighways	= FALSE;					// Whether or not directions should avoid highways
