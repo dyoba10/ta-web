@@ -23,10 +23,10 @@ class Home extends CI_Controller {
         $config['zoom'] = '12';
         $config['sensor'] = TRUE;
         $config['https'] = TRUE;
-        //$config['directions'] = TRUE;
+        $config['directions'] = TRUE;
         //$config['directionsStart'] = 'auto';
         //$config['directionsEnd'] = $coords;
-        
+        //$config['directionsDivID'] = 'directions_canvas';
         
 
         $this->googlemaps->initialize($config);
