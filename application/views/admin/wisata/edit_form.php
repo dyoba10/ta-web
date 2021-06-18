@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="form-group">
-					<label for="name">Gambar</label>
+					<label for="name">Gambar 1</label>
 					<input class="form-control-file <?php echo form_error('gambar') ? 'is-invalid':'' ?>"
 					    type="file" name="gambar" />
                     <input type="hidden" name="old_image" value="<?php echo $wisata->gambar ?>" />    
@@ -53,6 +53,27 @@
 						<?php echo form_error('gambar') ?>
 				    </div>
                 </div>
+
+                <div class="form-group">
+					<label for="name">Gambar 2</label>
+					<input class="form-control-file <?php echo form_error('gambar2') ? 'is-invalid':'' ?>"
+					    type="file" name="gambar2" />
+                    <input type="hidden" name="old_image2" value="<?php echo $wisata->gambar2 ?>" />    
+					<div class="invalid-feedback">
+						<?php echo form_error('gambar2') ?>
+				    </div>
+                </div>
+
+                <div class="form-group">
+					<label for="name">Gambar 3</label>
+					<input class="form-control-file <?php echo form_error('gambar3') ? 'is-invalid':'' ?>"
+					    type="file" name="gambar3" />
+                    <input type="hidden" name="old_image3" value="<?php echo $wisata->gambar3 ?>" />    
+					<div class="invalid-feedback">
+						<?php echo form_error('gambar3') ?>
+				    </div>
+                </div>  
+
 
                 <div class="form-group">
 					<label for="name">Alamat*</label>

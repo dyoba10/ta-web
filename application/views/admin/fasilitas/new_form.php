@@ -28,7 +28,7 @@
       <!-- DataTables -->
       <div class="card mb-3">
         <div class="card-header">
-        <a href="<?php echo site_url('admin/fasilitas/') ?>"><i class="fas fa-plus"></i> Back</a>
+        <a href="<?php echo site_url('admin/fasilitas/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
         </div>
         <div class="card-body">
             <form action="<?php base_url('admin/fasilitas/add') ?>" method="post" enctype="multipart/form-data">
@@ -42,11 +42,29 @@
                 </div>
 
                 <div class="form-group">
-					<label for="name">Gambar</label>
+					<label for="name">Gambar 1</label>
 					<input class="form-control-file <?php echo form_error('gambar') ? 'is-invalid':'' ?>"
 					    type="file" name="gambar" />
 					<div class="invalid-feedback">
 						<?php echo form_error('gambar') ?>
+				    </div>
+                </div>
+
+                <div class="form-group">
+					<label for="name">Gambar 2</label>
+					<input class="form-control-file <?php echo form_error('gambar2') ? 'is-invalid':'' ?>"
+					    type="file" name="gambar2" />
+					<div class="invalid-feedback">
+						<?php echo form_error('gambar2') ?>
+				    </div>
+                </div>
+
+                <div class="form-group">
+					<label for="name">Gambar 3</label>
+					<input class="form-control-file <?php echo form_error('gambar3') ? 'is-invalid':'' ?>"
+					    type="file" name="gambar3" />
+					<div class="invalid-feedback">
+						<?php echo form_error('gambar3') ?>
 				    </div>
                 </div>
 

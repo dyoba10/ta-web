@@ -46,6 +46,8 @@
                         </td>
                         <td>
                         <img id="imgsource" src="<?php echo base_url('upload/toko/'.$toko->gambar) ?>" width="64">
+                        <img id="imgsource" src="<?php echo base_url('upload/toko/'.$toko->gambar2) ?>" width="64">
+                        <img id="imgsource" src="<?php echo base_url('upload/toko/'.$toko->gambar3) ?>" width="64">
                         </td>
                         <td>
                             <?php echo $toko->alamat ?>

@@ -152,6 +152,8 @@
                               data-id="<?php echo $wisata->id_wisata ?>"
                               data-nama_wisata="<?php echo $wisata->nama_wisata ?>"
                               data-imgsource="<?php echo base_url('upload/wisata/'.$wisata->gambar) ?>"
+                              data-imgsource2="<?php echo base_url('upload/wisata/'.$wisata->gambar2) ?>"
+                              data-imgsource3="<?php echo base_url('upload/wisata/'.$wisata->gambar3) ?>"
                               data-alamat="<?php echo $wisata->alamat ?>"
                               data-deskripsi="<?php echo $wisata->deskripsi ?>"
                               data-toggle="modal" data-target="#edit-data">
@@ -208,6 +210,8 @@
                               data-id="<?php echo $toko->id_toko ?>"
                               data-nama_toko="<?php echo $toko->nama_toko ?>"
                               data-imgsource="<?php echo base_url('upload/toko/'.$toko->gambar) ?>"
+                              data-imgsource2="<?php echo base_url('upload/toko/'.$toko->gambar2) ?>"
+                              data-imgsource3="<?php echo base_url('upload/toko/'.$toko->gambar3) ?>"
                               data-alamat="<?php echo $toko->alamat ?>"
                               data-deskripsi="<?php echo $toko->deskripsi ?>"
                               data-toggle="modal" data-target="#edit-data-toko">
@@ -264,6 +268,8 @@
                               data-id="<?php echo $fasilitas->id_fasilitas ?>"
                               data-nama_fasilitas="<?php echo $fasilitas->nama_fasilitas ?>"
                               data-imgsource="<?php echo base_url('upload/fasilitas/'.$fasilitas->gambar) ?>"
+                              data-imgsource2="<?php echo base_url('upload/fasilitas/'.$fasilitas->gambar2) ?>"
+                              data-imgsource3="<?php echo base_url('upload/fasilitas/'.$fasilitas->gambar3) ?>"
                               data-alamat="<?php echo $fasilitas->alamat ?>"
                               data-deskripsi="<?php echo $fasilitas->deskripsi ?>"
                               data-toggle="modal" data-target="#edit-data-fasilitas">

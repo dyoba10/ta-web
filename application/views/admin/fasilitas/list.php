@@ -46,6 +46,8 @@
                         </td>
                         <td>
                         <img id="imgsource" src="<?php echo base_url('upload/fasilitas/'.$fasilitas->gambar) ?>" width="64">
+                        <img id="imgsource" src="<?php echo base_url('upload/fasilitas/'.$fasilitas->gambar2) ?>" width="64">
+                        <img id="imgsource" src="<?php echo base_url('upload/fasilitas/'.$fasilitas->gambar3) ?>" width="64">
                         </td>
                         <td>
                             <?php echo $fasilitas->alamat ?>

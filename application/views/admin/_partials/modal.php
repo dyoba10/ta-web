@@ -61,6 +61,14 @@
 	                    <div class="col-lg-10">
                         <img id="imgpreview" class="img-fluid" src="" style="width: 400px; height: 264px;">
 	                    </div>
+                      <br>
+                      <div class="col-lg-10">
+                        <img id="imgpreview2" class="img-fluid" src="" style="width: 400px; height: 264px;">
+	                    </div>
+                      <br>
+                      <div class="col-lg-10">
+                        <img id="imgpreview3" class="img-fluid" src="" style="width: 400px; height: 264px;">
+	                    </div>
 	              </div>
 
                 <div class="form-group">
@@ -123,6 +131,14 @@
 	                  <label class="col-lg-2 col-sm-2 control-label">Gambar</label>
 	                    <div class="col-lg-10">
                         <img id="imgpreview" class="img-fluid" src="" style="width: 400px; height: 264px;">
+	                    </div>
+                      <br>
+                      <div class="col-lg-10">
+                        <img id="imgpreview2" class="img-fluid" src="" style="width: 400px; height: 264px;">
+	                    </div>
+                      <br>
+                      <div class="col-lg-10">
+                        <img id="imgpreview3" class="img-fluid" src="" style="width: 400px; height: 264px;">
 	                    </div>
 	              </div>
 
@@ -187,6 +203,14 @@
 	                    <div class="col-lg-10">
                         <img id="imgpreview" class="img-fluid" src="" style="width: 400px; height: 264px;">
 	                    </div>
+                      <br>
+                      <div class="col-lg-10">
+                        <img id="imgpreview2" class="img-fluid" src="" style="width: 400px; height: 264px;">
+	                    </div>
+                      <br>
+                      <div class="col-lg-10">
+                        <img id="imgpreview3" class="img-fluid" src="" style="width: 400px; height: 264px;">
+	                    </div>
 	              </div>
 
                 <div class="form-group">
@@ -237,6 +261,8 @@
             modal.find('#id_wisata').attr("value",div.data('id_wisata'));
             modal.find('#nama_wisata').attr("value",div.data('nama_wisata'));
             modal.find('#imgpreview').attr("src",div.data('imgsource'));
+            modal.find('#imgpreview2').attr("src",div.data('imgsource2'));
+            modal.find('#imgpreview3').attr("src",div.data('imgsource3'));
             modal.find('#alamat').html(div.data('alamat'));
             modal.find('#deskripsi').html(div.data('deskripsi'));
             modal.find('#website').attr("value",div.data('website'));
@@ -251,6 +277,8 @@
             modal.find('#id_toko').attr("value",div.data('id_toko'));
             modal.find('#nama_toko').attr("value",div.data('nama_toko'));
             modal.find('#imgpreview').attr("src",div.data('imgsource'));
+            modal.find('#imgpreview2').attr("src",div.data('imgsource2'));
+            modal.find('#imgpreview3').attr("src",div.data('imgsource3'));
             modal.find('#alamat').html(div.data('alamat'));
             modal.find('#deskripsi').html(div.data('deskripsi'));
             modal.find('#website').attr("value",div.data('website'));
@@ -265,6 +293,8 @@
             modal.find('#id_fasilitas').attr("value",div.data('id_fasilitas'));
             modal.find('#nama_fasilitas').attr("value",div.data('nama_fasilitas'));
             modal.find('#imgpreview').attr("src",div.data('imgsource'));
+            modal.find('#imgpreview2').attr("src",div.data('imgsource2'));
+            modal.find('#imgpreview3').attr("src",div.data('imgsource3'));
             modal.find('#alamat').html(div.data('alamat'));
             modal.find('#deskripsi').html(div.data('deskripsi'));
             modal.find('#website').attr("value",div.data('website'));

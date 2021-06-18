@@ -7,6 +7,8 @@ class Toko_model extends CI_Model
     public $id_toko;
     public $nama_toko;
     public $gambar = "default.jpg";
+    public $gambar2 = "default.jpg";
+    public $gambar3 = "default.jpg";
     public $alamat;
     public $deskripsi;
     public $latitude;
@@ -53,6 +55,8 @@ class Toko_model extends CI_Model
         $this->id_toko = uniqid();
         $this->nama_toko = $post["nama_toko"];
         $this->gambar = $this->_uploadImage();
+        $this->gambar2 = $this->_uploadImage2();
+        $this->gambar3 = $this->_uploadImage3();
         $this->alamat = $post["alamat"];
         $this->deskripsi = $post["deskripsi"];
         $this->latitude = $post["latitude"];
@@ -72,6 +76,18 @@ class Toko_model extends CI_Model
             $this->gambar = $post["old_image"];
         }
 
+        if (!empty($_FILES["gambar2"]["name"])) {
+            $this->gambar2 = $this->_uploadImage2();
+        } else {
+            $this->gambar2 = $post["old_image2"];
+        }
+
+        if (!empty($_FILES["gambar3"]["name"])) {
+            $this->gambar3 = $this->_uploadImage3();
+        } else {
+            $this->gambar3 = $post["old_image3"];
+        }
+
         $this->alamat = $post["alamat"];
         $this->deskripsi = $post["deskripsi"];
         $this->latitude = $post["latitude"];
@@ -89,9 +105,9 @@ class Toko_model extends CI_Model
     {
     $config['upload_path']          = './upload/toko/';
     $config['allowed_types']        = 'gif|jpg|png';
-    $config['file_name']            = $this->id_toko;
+    //$config['file_name']            = $this->id_toko;
     $config['overwrite']			= true;
-    $config['max_size']             = 1024; // 1MB
+    $config['max_size']             = 5024; // 1MB
     // $config['max_width']            = 1024;
     // $config['max_height']           = 768;
 
@@ -104,12 +120,50 @@ class Toko_model extends CI_Model
     return "default.jpg";
     }
 
+    private function _uploadImage2()
+    {
+    $config['upload_path']          = './upload/toko/';
+    $config['allowed_types']        = 'gif|jpg|png';
+    //$config['file_name']            = $this->id_toko;
+    $config['overwrite']			= true;
+    $config['max_size']             = 5024; // 1MB
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
+
+    $this->load->library('upload', $config);
+
+    if ($this->upload->do_upload('gambar2')) {
+        return $this->upload->data("file_name");
+    }
+    
+    return "default.jpg";
+    }
+
+    private function _uploadImage3()
+    {
+    $config['upload_path']          = './upload/toko/';
+    $config['allowed_types']        = 'gif|jpg|png';
+    //$config['file_name']            = $this->id_toko;
+    $config['overwrite']			= true;
+    $config['max_size']             = 5024; // 1MB
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
+
+    $this->load->library('upload', $config);
+
+    if ($this->upload->do_upload('gambar3')) {
+        return $this->upload->data("file_name");
+    }
+    
+    return "default.jpg";
+    }
+
     private function _deleteImage($id)
     {
-    $product = $this->getById($id);
-    if ($product->gambar != "default.jpg") {
-	    $filename = explode(".", $product->gambar)[0];
-		return array_map('unlink', glob(FCPATH."upload/product/$filename.*"));
+    $toko = $this->getById($id);
+    if ($toko->gambar != "default.jpg") {
+	    $filename = explode(".", $toko->gambar)[0];
+		return array_map('unlink', glob(FCPATH."upload/toko/$filename.*"));
     }
     }
 }
