@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'sig-wisata',
+	'hostname' => 'db4free.net',
+	'username' => 'dyoba_sig1',
+	'password' => 'Sig_wisata1',
+	'database' => 'sig_wisata1',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
