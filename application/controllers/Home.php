@@ -24,12 +24,18 @@ class Home extends CI_Controller {
         $config['sensor'] = TRUE;
         $config['https'] = TRUE;
         $config['directions'] = TRUE;
+
+        
+
+        $styles = array();
+        $styles['clickableIcons'] = FALSE;
+        //$config['styles'] = "clickableIcons: false";
         //$config['directionsStart'] = 'auto';
         //$config['directionsEnd'] = $coords;
         //$config['directionsDivID'] = 'directions_canvas';
         
 
-        $this->googlemaps->initialize($config);
+        $this->googlemaps->initialize($config,$styles);
 
         foreach ($coords as $coordinate) {
             // $url = prep_url($coordinate->website);

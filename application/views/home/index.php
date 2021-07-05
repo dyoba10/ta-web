@@ -330,6 +330,7 @@
     get_location();
   });
 
+
 function get_location() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(register_coords);
@@ -383,6 +384,7 @@ function register_coords(position) {
               fillColor: '#FF0000',
               fillOpacity: 0.35,
               map: map,
+              mapId : "c640a805d751796",
               center: myLatlng,
               radius: 3000
             });

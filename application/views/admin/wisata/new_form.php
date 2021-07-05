@@ -35,76 +35,76 @@
                 <div class="form-group">
                     <label for="nama_wisata">Nama Wisata</label>
                     <input class="form-control <?php echo form_error('nama_wisata') ? 'is-invalid':'' ?>"
-					    type="text" name="nama_wisata" placeholder="Nama Wisata" />
+					          type="text" name="nama_wisata" placeholder="Nama Wisata" />
                     <div class="invalid-feedback">
                         <?php echo form_error('nama_wisata') ?>
                     </div>    
                 </div>
 
                 <div class="form-group">
-					<label for="name">Gambar 1</label>
-					<input class="form-control-file <?php echo form_error('gambar') ? 'is-invalid':'' ?>"
-					    type="file" name="gambar" />
-					<div class="invalid-feedback">
-						<?php echo form_error('gambar') ?>
-				    </div>
+					          <label for="name">Gambar 1</label>
+					          <input class="form-control-file <?php echo form_error('gambar') ? 'is-invalid':'' ?>"
+					          type="file" name="gambar" />
+					          <div class="invalid-feedback">
+						            <?php echo form_error('gambar') ?>
+				            </div>
                 </div>
 
                 <div class="form-group">
-					<label for="name">Gambar 2</label>
-					<input class="form-control-file <?php echo form_error('gambar2') ? 'is-invalid':'' ?>"
-					    type="file" name="gambar2" />
-					<div class="invalid-feedback">
-						<?php echo form_error('gambar2') ?>
-				    </div>
+					          <label for="name">Gambar 2</label>
+					          <input class="form-control-file <?php echo form_error('gambar2') ? 'is-invalid':'' ?>"
+					                type="file" name="gambar2" />
+					          <div class="invalid-feedback">
+						        <?php echo form_error('gambar2') ?>
+				            </div>
                 </div>
 
                 <div class="form-group">
-					<label for="name">Gambar 3</label>
-					<input class="form-control-file <?php echo form_error('gambar3') ? 'is-invalid':'' ?>"
-					    type="file" name="gambar3" />
-					<div class="invalid-feedback">
-						<?php echo form_error('gambar3') ?>
-				    </div>
+					          <label for="name">Gambar 3</label>
+					          <input class="form-control-file <?php echo form_error('gambar3') ? 'is-invalid':'' ?>"
+					          type="file" name="gambar3" />
+					          <div class="invalid-feedback">
+						        <?php echo form_error('gambar3') ?>
+				            </div>
                 </div>
 
                 <div class="form-group">
-					<label for="name">Alamat*</label>
-						<textarea class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
-								 name="alamat" placeholder="Alamat"></textarea>
-					<div class="invalid-feedback">
-						<?php echo form_error('alamat') ?>
-					</div>
-				</div>
-
-        <div class="form-group">
-					<label for="name">Deskripsi*</label>
-						<textarea class="form-control <?php echo form_error('deskripsi') ? 'is-invalid':'' ?>"
-								 name="deskripsi" placeholder="Deskripsi"></textarea>
-					<div class="invalid-feedback">
-						<?php echo form_error('deskripsi') ?>
-					</div>
-				</div>
+					          <label for="name">Alamat*</label>
+						        <textarea class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
+								    name="alamat" placeholder="Alamat"></textarea>
+					          <div class="invalid-feedback">
+						        <?php echo form_error('alamat') ?>
+					          </div>
+				        </div>
 
                 <div class="form-group">
-					<label for="price">Latitude</label>
-					<input class="form-control <?php echo form_error('latitude') ? 'is-invalid':'' ?>"
-						type="text" name="latitude" placeholder="Latitude" />
-					 <div class="invalid-feedback">
-						<?php echo form_error('latitude') ?>
-				    </div> 
-				</div>
+					          <label for="name">Deskripsi*</label>
+						        <textarea class="form-control <?php echo form_error('deskripsi') ? 'is-invalid':'' ?>"
+								              name="deskripsi" placeholder="Deskripsi"></textarea>
+					          <div class="invalid-feedback">
+						        <?php echo form_error('deskripsi') ?>
+					          </div>
+				        </div>
+
+                <div class="form-group">
+					          <label for="price">Latitude</label>
+					          <input class="form-control <?php echo form_error('latitude') ? 'is-invalid':'' ?>"
+						                type="text" name="latitude" placeholder="Latitude" />
+					          <div class="invalid-feedback">
+						        <?php echo form_error('latitude') ?>
+				            </div> 
+				        </div>
 
                  <div class="form-group">
-					<label for="longitude">Longitude</label>
-					<input class="form-control <?php echo form_error('longitude') ? 'is-invalid':'' ?>"
-						type="text" name="longitude" placeholder="Longitude" />
-					<div class="invalid-feedback">
-						<?php echo form_error('longitude') ?>
-				    </div>
-				</div>
+					           <label for="longitude">Longitude</label>
+					           <input class="form-control <?php echo form_error('longitude') ? 'is-invalid':'' ?>"
+						                type="text" name="longitude" placeholder="Longitude" />
+					           <div class="invalid-feedback">
+						              <?php echo form_error('longitude') ?>
+				            </div>
+				          </div>
 
-                <input class="btn btn-success" type="submit" name="btn" value="Save" />    
+                  <input class="btn btn-success" type="submit" name="btn" value="Save" />    
             </form>
         </div>
       </div>  
