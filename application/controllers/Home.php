@@ -10,6 +10,8 @@ class Home extends CI_Controller {
         $this->load->model("Fasilitas_model");
         $this->load->model('Map_model', '', TRUE);
         $this->load->library('Googlemaps');
+        $this->load->model("Feedback_Model");
+        $this->load->library('form_validation');
     }
 
     public function index() 
@@ -24,6 +26,35 @@ class Home extends CI_Controller {
         $config['sensor'] = TRUE;
         $config['https'] = TRUE;
         $config['directions'] = TRUE;
+        $config['places'] = TRUE;
+        
+        $config['placesAutocompleteInputID'] = 'myPlaceTextBox';
+        $config['placesAutocompleteBoundsMap'] = TRUE; // set results biased towards the maps viewport
+        $config['placesAutocompleteOnChange'] = "
+        markers_map[0].setVisible(false);
+        var place = placesAutocomplete.getPlace();
+        if (!place.geometry) {
+          return;
+        }
+
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+          map.setZoom(15);
+        } else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(15);
+        }
+
+        
+
+        var address = '';
+        if (place.address_components) {
+          address = [
+            (place.address_components[0] && place.address_components[0].short_name || ''), (place.address_components[1] && place.address_components[1].short_name || ''), (place.address_components[2] && place.address_components[2].short_name || '')
+          ].join(' ');
+        }   
+        ";
 
         
 
@@ -71,5 +102,19 @@ class Home extends CI_Controller {
         $data["wisata"] = $this->Wisata_model->getAll();
         $this->load->view('home/index', $data);
     }
+
+    public function add(){
+        $fb = $this->Feedback_Model;
+        $validation = $this->form_validation;
+        $validation->set_rules($fb->rules());
+
+        if ($validation->run()) {
+            $fb->save();
+            
+        }
+        
+        redirect()->to('home');
+    }
+
 
 }

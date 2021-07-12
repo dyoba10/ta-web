@@ -100,10 +100,11 @@
         <div class="col-lg-8 text-center">
           <h2 class="text-center mt-0">Peta lokasi Bandar lampung</h2>
           <hr class="divider my-4">
-        </div> 
+        </div>   
       <?php echo $map['html']; ?>
       <p>*Marker pada maps adalah titik lokasi di daerah ProvinsiLampung, Marker berwarna biru adalah titik lokasi pengguna</p>
       <div id="direction_canvas"></div>
+      <input type="text" id="myPlaceTextBox" style="margin-bottom: 20px;" />
     </div>
 
      <div class="row justify-content-center">
@@ -294,6 +295,52 @@
     </div>
   </section> -->
 
+  <section class="page-section bg-white text-dark" id="feedback">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Berikan Masukan!</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+       <div class="col-lg-8">
+       <form action="<?php echo site_url('feedback/add') ?>" method="post" class="shadow p-5">
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>" id="nama" name="nama" placeholder="Nama">
+            <div class="invalid-feedback">
+              <?php echo form_error('nama') ?>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <div class="invalid-feedback">
+              <?php echo form_error('email') ?>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pesan">Pesan</label>
+            <textarea class="form-control <?php echo form_error('pesan') ? 'is-invalid':'' ?>" id="pesan" name="pesan" rows="3"></textarea>
+            <div class="invalid-feedback">
+              <?php echo form_error('pesan') ?>
+            </div>
+          </div>
+          <!-- <button type="submit" class="btn btn-primary btn-lg">Submit</button> -->
+          <div class="text-center">
+            <input class="btn btn-primary btn-lg" type="submit" name="btn" value="Kirim"/>
+          </div>
+            
+        </form>
+       </div>
+    </div>
+  </section>
+  
   <!-- Contact Section -->
   <section class="page-section bg-dark text-white" id="contact">
     <div class="container">

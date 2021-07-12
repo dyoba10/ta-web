@@ -54,6 +54,11 @@
         </div>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('admin/feedback/')?>">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Feedback</span></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('admin/user/')?>">
           <i class="fas fa-fw fa-user"></i>
           <span>Users</span></a>
