@@ -304,9 +304,8 @@
           <p class="text-muted mb-5"></p>
         </div>
       </div>
-    </div>
 
-    <div class="row justify-content-center">
+      <div class="row justify-content-center">
        <div class="col-lg-8">
        <form action="<?php echo site_url('feedback/add') ?>" method="post" class="shadow p-5">
           <div class="form-group">
@@ -339,6 +338,9 @@
         </form>
        </div>
     </div>
+    </div>
+
+    
   </section>
   
   <!-- Contact Section -->
